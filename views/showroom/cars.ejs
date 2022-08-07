@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/dashboard.css" />
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <%- include('../partials/sNavbar') %>
+    <br>
+    <h1>Cars available in our showroom</h1>
+    <br>
+    <div>
+      <table class="container border border-info">
+        <thead>
+          <tr>
+            <th><h1>Model Name</h1></th>
+            <th><h1>Release Year</h1></th>
+            <th><h1>Price</h1></th>
+            <th><h1></h1></th>
+            <th><h1></h1></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (row of rows){ %>
+          <tr>
+            <td><%=row.model%></td>
+            <td><%=row.release_year%></td>
+            <td><%=row.price%></td>
+            <td><a class="btn btn-outline-info" href="/showroom/cars/update/<%= row.car_id %>">Update</a></td>
+            <td><a class="btn btn-outline-danger" href="/showroom/cars/<%= row.car_id %> ">Delete</a></td>
+          </tr>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+    <div class="text-center my-5">
+      <a class="btn btn-outline-info" href="/showroom/cars/new"
+        >Add Car</a
+      >
+    </div>
+  </body>
+</html>

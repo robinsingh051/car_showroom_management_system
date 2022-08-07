@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salesman</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/dashboard.css" />
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <%- include('../partials/sNavbar') %>
+    <br />
+    <h1>Salesman Details</h1>
+    <br />
+    <div>
+      <table class="container border border-info">
+        <thead>
+          <tr>
+            <th><h1>Salesman</h1></th>
+            <th><h1>Phone Number</h1></th>
+            <th><h1>Salary</h1></th>
+            <th><h1>Address</h1></th>
+            <th><h1></h1></th>
+            <th><h1></h1></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (row of rows){ %>
+          <tr>
+            <td><%=row.sname%></td>
+            <td><%=row.phone%></td>
+            <td><%=row.salary%></td>
+            <td><%=row.addr%></td>
+            <td>
+              <a
+                class="btn btn-outline-info"
+                href="/showroom/staff/update/<%= row.sid %>"
+                >Update</a
+              >
+            </td>
+            <td>
+              <a
+                class="btn btn-outline-danger"
+                href="/showroom/staff/<%= row.sid %> "
+                >Delete</a
+              >
+            </td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+    <div class="text-center my-5">
+      <a class="btn btn-outline-info" href="/showroom/staff/new"
+        >Add Salesman</a
+      >
+    </div>
+  </body>
+</html>

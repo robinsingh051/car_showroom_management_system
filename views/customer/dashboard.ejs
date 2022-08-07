@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Dashboard</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/dashboard.css" type="text/css" />
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <%- include('../partials/cNavbar')%>
+    <br />
+    <h1><b>Cars available in our showroom</b></h1>
+    <br />
+    <div>
+      <table class="container border border-info">
+        <thead>
+          <tr>
+            <th><h1>Model Name</h1></th>
+            <th><h1>Release Year</h1></th>
+            <th><h1>Price</h1></th>
+            <th><h1></h1></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (row of rows){ %>
+          <tr>
+            <td><%=row.model%></td>
+            <td><%=row.release_year%></td>
+            <td><%=row.price%></td>
+            <td>
+              <a
+                class="btn btn-outline-info"
+                href="/customer/<%= row.car_id %> "
+                >Book Test Ride</a
+              >
+            </td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

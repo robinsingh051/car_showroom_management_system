@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update Car</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/register.css" type="text/css" />
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid bg">
+      <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-12"></div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <form
+            class="form-container"
+            action="/showroom/cars/update/<%= rows[0].car_id %> "
+            method="post"
+          >
+            <h2 style="text-align: center">Car Details</h2>
+
+            <div class="mb-0">
+              <label for="modelid" class="form-label">Car Model Name</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Car Model Name"
+                id="modelid"
+                name="model"
+                value="<%= rows[0].model %>"
+              />
+            </div>
+
+            <div class="mb-0">
+              <label for="yearid" class="form-label">Release year</label>
+              <input
+                type="text"
+                class="form-control"
+                id="yearid"
+                placeholder="Release year     eg:2015"
+                name="release_year"
+                value="<%= rows[0].release_year %>"
+              />
+            </div>
+
+            <div class="mb-4">
+              <label for="priceid" class="form-label">Showroom price</label>
+              <input
+                type="text"
+                class="form-control"
+                id="priceid"
+                placeholder="Price of car"
+                name="price"
+                value="<%= rows[0].price %>"
+              />
+            </div>
+
+            <div class="mb-2">
+              <button type="submit" class="btn btn-success btn-block">
+                Update
+              </button>
+            </div>
+
+            <h6 style="text-align: center">
+              Don't want to Update Car Details?
+              <a href="/showroom/cars">Go Back</a>
+            </h6>
+          </form>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12"></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/register.css" type="text/css" />
+    <link rel="stylesheet" href="/css/additional.css" type="text/css" />
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid bg">
+      <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-12"></div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <form class="form-container" action="/register" method="post">
+            <h2 style="text-align: center">Create account!</h2>
+
+            <div class="mb-0">
+              <label for="nameid" class="form-label"></label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Name"
+                id="nameid"
+                name="name"
+              />
+            </div>
+
+            <div class="mb-0">
+              <label for="emailid" class="form-label"></label>
+              <input
+                type="email"
+                class="form-control"
+                id="emailid"
+                placeholder="Email Address"
+                name="email"
+              />
+            </div>
+
+            <div class="mb-0">
+              <label for="phoneid" class="form-label"></label>
+              <input
+                type="number"
+                class="form-control"
+                id="phoneid"
+                placeholder="Phone"
+                name="phone"
+              />
+            </div>
+
+            <div class="mb-0">
+              <label for="passid" class="form-label"></label>
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Password"
+                id="passid"
+                name="password"
+              />
+            </div>
+
+            <div class="mb-4">
+              <label for="canfpassid" class="form-label"></label>
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Confirm Password"
+                id="confpassid"
+              />
+            </div>
+
+            <div class="mb-2">
+              <button type="submit" class="btn btn-success btn-block">
+                Register
+              </button>
+            </div>
+
+            <h6 style="text-align: center">
+              Already have an account?
+              <a style="color: honeydew" href="/">Login</a>
+            </h6>
+          </form>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12"></div>
+      </div>
+    </div>
+  </body>
+</html>
